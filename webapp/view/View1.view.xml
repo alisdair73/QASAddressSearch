@@ -1,0 +1,44 @@
+<mvc:View controllerName="QASAddressSearch.controller.View1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m">
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<Label text="Address"/>
+					<Input 
+			        	id="Address" 
+						value="{Address>AddressLine}" 
+						startSuggestion="5"
+						change="onAddressChanged"
+						editable="true"
+						showValueHelp="true"
+						showSuggestion="true"
+						filterSuggests="false"
+						suggest="onAddressSuggest"
+						suggestionItemSelected="onAddressSelected"
+						suggestionRows="{/Addresses}"
+						valueHelpRequest="onAddressValueHelpRequest"
+						maxLength="40"
+						maxSuggestionWidth="500px"
+					>
+						<suggestionColumns>
+						    <Column>
+						      <Text text="Address Line" />
+						    </Column>
+						</suggestionColumns>
+						<suggestionRows>
+						    <ColumnListItem>
+						      <cells>
+						        <Label text="{PartialAddress}" />
+						      </cells>
+						    </ColumnListItem>
+						</suggestionRows>  
+					</Input>
+					<HBox alignContent="Center" width="100%" justifyContent="Center">
+						<BusyIndicator  text="...searching for matching addresses" visible="{ViewHelper>/busy}"/>
+					</HBox>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

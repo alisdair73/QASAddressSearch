@@ -1,0 +1,16 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:vh="sap.ui.comp.valuehelpdialog">
+	<SelectDialog 
+		id="addressSearch"
+		noDataText="No Address Found"	
+		title="Address Search"
+		class="sapUiPopupWithPadding"
+		items="{/Addresses}"
+		search="onAddressValueHelpSearch"
+		liveChange="onAddressValueHelpSearch"
+		confirm="onAddressSelected"
+		multiSelect="false">
+		<StandardListItem
+			title="{PartialAddress}"
+		/>
+	</SelectDialog>
+</core:FragmentDefinition>
